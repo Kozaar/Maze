@@ -217,7 +217,7 @@ void Maze::generateLastRow() {
 
 void Maze::makeRightWall(int row) {
     for (int i = 0; i < cols_-1; i++) {
-        if (arc4random_uniform(2) || matrix_[row][i] == matrix_[row][i+1]) {
+        if ((rand() % 2) || matrix_[row][i] == matrix_[row][i+1]) {
             vectorForPrint.at(row).at(i).first = 1;
         } else {
             vectorForPrint.at(row).at(i).first = 0;
@@ -232,7 +232,7 @@ void Maze::makeDownWall(int row) {
     for (int i = 0; i < cols_-1; i++) {
         if (!exitExist && matrix_[row][i] != matrix_[row][i+1]) {
             vectorForPrint.at(row).at(i).second = 0;
-        } else if (arc4random_uniform(2)) {
+        } else if (rand() % 2) {
             vectorForPrint.at(row).at(i).second = 1;
         } else {
             vectorForPrint.at(row).at(i).second = 0;
@@ -245,7 +245,7 @@ void Maze::makeDownWall(int row) {
     if (!exitExist) {
         vectorForPrint.at(row).at(cols_-1).second = 0;
     } else {
-        vectorForPrint.at(row).at(cols_-1).second = arc4random_uniform(2);
+        vectorForPrint.at(row).at(cols_-1).second = rand() % 2;
     }
 }
 

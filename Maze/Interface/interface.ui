@@ -39,15 +39,16 @@
    <widget class="QRadioButton" name="mazeRadioButton">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>50</x>
       <y>520</y>
-      <width>91</width>
+      <width>171</width>
       <height>45</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <pointsize>28</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -60,13 +61,14 @@
      <rect>
       <x>265</x>
       <y>520</y>
-      <width>91</width>
+      <width>161</width>
       <height>45</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <pointsize>28</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -477,7 +479,7 @@
       <x>30</x>
       <y>640</y>
       <width>201</width>
-      <height>151</height>
+      <height>153</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="area">
@@ -525,8 +527,13 @@
       <x>30</x>
       <y>790</y>
       <width>201</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="text">
      <string/>

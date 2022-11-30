@@ -8,16 +8,16 @@ bool MazeFile::getMazeDataFromFile(std::string fileName,
     std::ifstream fin(fileName);
     std::string s;
     if (fin.is_open()) {
-        std::string line;
-        int rows = -1, cols = -1;
-        std::getline(fin, line);
-        size_t bufSize_t;
-        rows = std::stoi(line, &bufSize_t);
-        line.erase(0, bufSize_t);
-        cols = std::stoi(line, &bufSize_t);
-        if (rows > 0 && cols > 0) {
-            res = true;
-            try {
+        try {
+            std::string line;
+            int rows = -1, cols = -1;
+            std::getline(fin, line);
+            size_t bufSize_t;
+            rows = std::stoi(line, &bufSize_t);
+            line.erase(0, bufSize_t);
+            cols = std::stoi(line, &bufSize_t);
+            if (rows > 0 && cols > 0) {
+                res = true;
                 int a;
                 for (int i = 0; i < rows && res; i++) {
                     data->push_back(std::vector<std::pair<bool, bool> >());
@@ -37,9 +37,9 @@ bool MazeFile::getMazeDataFromFile(std::string fileName,
                         data->at(i).at(j).second = a;
                     }
                 }
-            } catch (std::exception& e) {
-                res = false;
             }
+        } catch (std::exception& e) {
+            res = false;
         }
         fin.close();
     }

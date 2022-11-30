@@ -2,7 +2,7 @@
 #include "cavefile.h"
 
 bool Cave::myRand(int chanceToBirth) {
-    return arc4random_uniform(100) < (uint32_t)chanceToBirth;
+    return rand() % 100 < chanceToBirth;
 }
 
 void Cave::generateNewCave(int height, int width, int chanceToBirth) {
